@@ -4,6 +4,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Donation from "../Pages/Donation/Donation";
 import Statistics from "../Pages/Statistics/Statistics";
 import Root from "../RootLayout/Root";
+import CategoryById from "../Components/CategoryById";
 
 export const routers = createBrowserRouter([
     {
@@ -13,7 +14,13 @@ export const routers = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home/>,
+                loader: () => fetch('/data.json')
+            },
+            {
+                path: '/category/:id',
+                element: <CategoryById />,
+                loader: () => fetch('/data.json')
             },
             {
                 path: '/donation',

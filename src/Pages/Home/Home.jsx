@@ -1,6 +1,10 @@
+import { useLoaderData } from "react-router-dom";
 import cover from "./../../assets/images/cover.png";
+import SingleCard from "../../Components/SingleCard";
 
 const Home = () => {
+  const data = useLoaderData();
+
   return (
     <>
       <div className="hero">
@@ -25,6 +29,12 @@ const Home = () => {
             </label>
           </div>
         </div>
+      </div>
+
+      <div className="my-5 grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+          {
+            data.map( catg => <SingleCard key={catg.id } catg={catg} />)
+          }
       </div>
     </>
   );

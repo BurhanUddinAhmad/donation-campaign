@@ -4,8 +4,8 @@ import {
     CardHeader,
     CardBody,
     Typography,
-    Button,
   } from "@material-tailwind/react";
+import { saveDonationToLS } from "../utils/localstorage";
 
 
 const CategoryById = () => {
@@ -13,6 +13,10 @@ const CategoryById = () => {
     const { id } = useParams();
     const idInt = parseInt(id )
     const showById = data.find(item => item.id === idInt );
+
+    const handleAddToLS = () => {
+      saveDonationToLS(idInt);
+    }
 
 
     return (
@@ -33,8 +37,12 @@ const CategoryById = () => {
           <Typography>
           {showById.description }
         </Typography>
+        <button 
+        onClick={handleAddToLS}
+        className="btn bg-blue-500 hover:bg-blue-400 duration-300 text-white">Donate ${showById.price }</button>
         </CardBody>
       </Card> 
+
            </div>
         </>
     );

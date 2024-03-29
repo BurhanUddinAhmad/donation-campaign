@@ -7,6 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, NavLink } from "react-router-dom";
+import logo from '../assets/images/Logo.png';
 
 function NavList() {
   return (
@@ -68,16 +69,11 @@ const Nav = () => {
 
   return (
     <>
-      <Navbar className="mx-auto max-w-screen-xl px-6 py-3">
+      <Navbar className="mx-auto max-w-6xl shadow-none px-6 py-3">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="#"
-            variant="h6"
-            className="mr-4 cursor-pointer py-1.5"
-          >
-            <Link to='/'>Donation Campaign</Link> 
-          </Typography>
+         <Link to='/'>
+          <img className="h-10" src={logo} alt="" />
+         </Link>
           <div className="hidden lg:block">
             <NavList />
           </div>

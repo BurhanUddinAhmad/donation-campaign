@@ -9,7 +9,7 @@ const Root = () => {
       <header>
         <Nav />
       </header>
-      <main>
+      <main className="my-2">
         <Outlet />
       </main>
       <footer>

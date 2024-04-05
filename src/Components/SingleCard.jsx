@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const SingleCard = ({catg }) => {
     const {id, img, title, category, category_bg, 
         card_bg, text_button_bg,
-    description, price } = catg;
+    } = catg;
   return (
     <>
       <Card style={{backgroundColor: card_bg }} className="overflow-hidden m-0 rounded-none" >
